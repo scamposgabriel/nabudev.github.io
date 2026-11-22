@@ -155,7 +155,6 @@ document.addEventListener('click',e=>{const nav=e.target.closest('[data-nav]');i
 document.addEventListener('change',e=>{if(e.target.matches('input[data-task]'))setTask(e.target);if(e.target.id==='restoreFile'){importBackup(e.target.files[0]);e.target.value=''}});
 document.addEventListener('input',e=>{if(e.target.id==='courseSearch'){const pos=e.target.selectionStart;libraryQuery=e.target.value;renderLibrary();const next=document.getElementById('courseSearch');next?.focus();try{next?.setSelectionRange(pos,pos)}catch{}}if(['notes-her','notes-him'].includes(e.target.id)){state.notes[e.target.id.slice(6)]=e.target.value;save()}});
 
-function H(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 const PDI_AREAS=[['Português e escrita','Concordância, porquês, redação e revisão autônoma'],['Interpretação e precisão','Identificar destinatários, prazos e fatos sem inventar consequências'],['Comunicação oral','Explicar ideias, apresentar e conversar profissionalmente'],['Excel e matemática','Planilhas, fórmulas, porcentagens e indicadores'],['Recursos Humanos','Recrutamento, seleção, benefícios, ética e pareceres'],['Marketing Digital','Social media, conteúdo, tráfego, métricas e projetos reais autorizados']];
 const GERAL_MODULES=[
 ['Português e gramática','Concordância verbal e nominal; quatro porquês; pontuação; revisão de frases.','Escreva e explique a correção de cinco frases de comunicação interna.'],
